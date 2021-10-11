@@ -76,7 +76,6 @@ img {
   letter-spacing: 2px;
 }
 progress {
-  width: 100%;
   -webkit-appearance: none;
   appearance: none;
   background: var(--lightdarkblue);
@@ -84,7 +83,7 @@ progress {
   border-radius: 1rem;
   width: 250px;
   height: 20px;
-  padding: 4px 4px;
+  padding: 4px;
 }
 progress::-webkit-progress-value {
   background-color: rgb(255, 163, 153);
@@ -94,6 +93,7 @@ progress::-webkit-progress-value {
     rgba(255, 77, 151, 1) 100%
   );
   border-radius: 1rem;
+  border: none;
 }
 progress::-moz-progress-bar {
   background: rgb(255, 163, 153);
@@ -103,6 +103,12 @@ progress::-moz-progress-bar {
     rgba(255, 77, 151, 1) 100%
   );
   border-radius: 1rem;
+}
+progress [value] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
 }
 
 .dot {
@@ -174,10 +180,14 @@ progress::-moz-progress-bar {
   }
   progress {
     width: 100%;
+    min-height: 20px;
+    padding: 5px 4px;
   }
   .dot {
-    right: 31.3%;
+    right: 31.5%;
     bottom: 37%;
+    width: 8px;
+    height: 8px;
   }
   .storage-info {
     bottom: unset;
